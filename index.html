@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kripa S - Hindi Lyricist & Composer</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#8B4513", secondary: "#D2691E" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+
+      body {
+          background: linear-gradient(135deg, #f5f1eb 0%, #ede4d3 100%);
+          font-family: 'Crimson Text', serif;
+      }
+
+      .paper-texture {
+          background-image:
+              radial-gradient(circle at 20% 50%, rgba(139, 69, 19, 0.03) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(210, 105, 30, 0.03) 0%, transparent 50%),
+              radial-gradient(circle at 40% 80%, rgba(139, 69, 19, 0.02) 0%, transparent 50%);
+      }
+
+      .floating-lyrics {
+          animation: float 15s ease-in-out infinite;
+      }
+
+      .floating-lyrics:nth-child(2) {
+          animation-delay: -5s;
+      }
+
+      .floating-lyrics:nth-child(3) {
+          animation-delay: -10s;
+      }
+
+      @keyframes float {
+          0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); opacity: 0.3; }
+          25% { transform: translateY(-20px) translateX(10px) rotate(1deg); opacity: 0.6; }
+          50% { transform: translateY(-10px) translateX(-10px) rotate(-1deg); opacity: 0.4; }
+          75% { transform: translateY(-30px) translateX(5px) rotate(0.5deg); opacity: 0.5; }
+      }
+
+      .ink-splatter {
+          background-image: radial-gradient(circle at 30% 70%, rgba(139, 69, 19, 0.1) 0%, transparent 30%);
+      }
+
+      .handwritten {
+          font-family: 'Crimson Text', serif;
+          font-style: italic;
+          transform: rotate(-1deg);
+      }
+
+      .music-visualizer {
+          position: absolute;
+          bottom: 2rem;
+          left: 50%;
+          transform: translateX(-50%);
+          display: flex;
+          gap: 4px;
+          opacity: 0.3;
+      }
+
+      .bar {
+          width: 3px;
+          background: #8B4513;
+          border-radius: 2px;
+          animation: visualizer 1.5s ease-in-out infinite;
+      }
+
+      .bar:nth-child(1) { height: 20px; animation-delay: 0s; }
+      .bar:nth-child(2) { height: 30px; animation-delay: 0.1s; }
+      .bar:nth-child(3) { height: 25px; animation-delay: 0.2s; }
+      .bar:nth-child(4) { height: 35px; animation-delay: 0.3s; }
+      .bar:nth-child(5) { height: 20px; animation-delay: 0.4s; }
+
+      @keyframes visualizer {
+          0%, 100% { transform: scaleY(1); }
+          50% { transform: scaleY(1.5); }
+      }
+
+      .nav-blur {
+          backdrop-filter: blur(10px);
+          background: rgba(245, 241, 235, 0.8);
+      }
+
+      .card-hover {
+          transition: all 0.3s ease;
+      }
+
+      .card-hover:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 20px 40px rgba(139, 69, 19, 0.15);
+      }
+
+      .audio-player {
+          background: linear-gradient(135deg, #f5f1eb 0%, #ede4d3 100%);
+          border: 2px solid rgba(139, 69, 19, 0.2);
+      }
+
+      .lyrics-card {
+          background: rgba(255, 255, 255, 0.7);
+          backdrop-filter: blur(5px);
+          border: 1px solid rgba(139, 69, 19, 0.1);
+      }
+
+      .hindi-text {
+          font-family: 'Noto Sans Devanagari', sans-serif;
+          font-weight: 600;
+      }
+    </style>
+  </head>
+  <body class="paper-texture">
+    <nav class="fixed top-0 w-full z-50 nav-blur border-b border-primary/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="font-['Pacifico'] text-2xl text-primary">Kripa S</div>
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="#home"
+              class="text-primary hover:text-secondary transition-colors"
+              >Home</a
+            >
+            <a
+              href="#about"
+              class="text-primary hover:text-secondary transition-colors"
+              >About</a
+            >
+            <a
+              href="#works"
+              class="text-primary hover:text-secondary transition-colors"
+              >Works</a
+            >
+            <a
+              href="#lyrics"
+              class="text-primary hover:text-secondary transition-colors"
+              >Lyrics</a
+            >
+            <a
+              href="#press"
+              class="text-primary hover:text-secondary transition-colors"
+              >Press</a
+            >
+            <a
+              href="#contact"
+              class="text-primary hover:text-secondary transition-colors"
+              >Contact</a
+            >
+          </div>
+          <div class="flex space-x-4">
+            <a
+              href="#"
+              class="w-8 h-8 flex items-center justify-center text-primary hover:text-secondary transition-colors"
+            >
+              <i class="ri-instagram-line"></i>
+            </a>
+            <a
+              href="#"
+              class="w-8 h-8 flex items-center justify-center text-primary hover:text-secondary transition-colors"
+            >
+              <i class="ri-youtube-line"></i>
+            </a>
+            <a
+              href="#"
+              class="w-8 h-8 flex items-center justify-center text-primary hover:text-secondary transition-colors"
+            >
+              <i class="ri-spotify-line"></i>
+            </a>
+          </div>
+          <button
+            class="md:hidden w-8 h-8 flex items-center justify-center text-primary"
+            id="mobile-menu-btn"
+          >
+            <i class="ri-menu-line"></i>
+          </button>
+        </div>
+      </div>
+      <div
+        class="md:hidden hidden bg-white/90 backdrop-blur-md border-t border-primary/10"
+        id="mobile-menu"
+      >
+        <div class="px-4 py-2 space-y-2">
+          <a
+            href="#home"
+            class="block py-2 text-primary hover:text-secondary transition-colors"
+            >Home</a
+          >
+          <a
+            href="#about"
+            class="block py-2 text-primary hover:text-secondary transition-colors"
+            >About</a
+          >
+          <a
+            href="#works"
+            class="block py-2 text-primary hover:text-secondary transition-colors"
+            >Works</a
+          >
+          <a
+            href="#lyrics"
+            class="block py-2 text-primary hover:text-secondary transition-colors"
+            >Lyrics</a
+          >
+          <a
+            href="#press"
+            class="block py-2 text-primary hover:text-secondary transition-colors"
+            >Press</a
+          >
+          <a
+            href="#contact"
+            class="block py-2 text-primary hover:text-secondary transition-colors"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <section
+      id="home"
+      class="min-h-screen relative overflow-hidden flex items-center justify-center"
+    >
+      <div
+        class="absolute inset-0"
+        style="background-image: url('https://readdy.ai/api/search-image?query=vintage%20aged%20paper%20texture%20with%20warm%20golden%20light%20streaming%20through%20window%20creating%20soft%20shadows%20on%20weathered%20parchment%20surface%20with%20subtle%20ink%20stains%20and%20calligraphy%20elements%20artistic%20background%20for%20poetry%20and%20music%20composition&width=1920&height=1080&seq=hero001&orientation=landscape'); background-size: cover; background-position: center; opacity: 0.3;"
+      ></div>
+
+      <div
+        class="floating-lyrics absolute top-20 left-20 text-6xl text-primary/30 handwritten"
+      >
+        मेरे शब्द
+      </div>
+      <div
+        class="floating-lyrics absolute top-40 right-32 text-4xl text-secondary/40 handwritten"
+      >
+        गुनगुनाते हैं
+      </div>
+      <div
+        class="floating-lyrics absolute bottom-40 left-40 text-5xl text-primary/25 handwritten"
+      >
+        दिल की बात
+      </div>
+
+      <div class="text-center z-10 max-w-4xl mx-auto px-4">
+        <h1
+          class="font-['Pacifico'] text-8xl md:text-9xl text-primary mb-6 drop-shadow-lg"
+        >
+          Kripa S
+        </h1>
+        <p class="text-2xl md:text-3xl text-primary/80 font-light italic mb-8">
+          "I stay unseen, but my words sing."
+        </p>
+        <div class="text-lg text-primary/70 max-w-2xl mx-auto leading-relaxed">
+          Hindi Lyricist • Singer • Composer<br />
+          <span class="text-base"
+            >Crafting soulful melodies from the shadows</span
+          >
+        </div>
+      </div>
+
+      <div class="music-visualizer">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+
+      <div
+        class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
+      >
+        <i class="ri-arrow-down-line text-2xl text-primary/60"></i>
+      </div>
+    </section>
+
+    <section id="about" class="py-20 px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+          <div class="space-y-8">
+            <h2 class="text-5xl font-['Playfair_Display'] text-primary mb-8">
+              The Voice Behind the Veil
+            </h2>
+            <div class="space-y-6 text-lg leading-relaxed text-primary/80">
+              <p>
+                In the quiet corners of creativity, where shadows dance with
+                melodies, lives a soul who speaks through verses. At twenty-one,
+                I am Kripa S—a name that carries the weight of countless
+                unspoken emotions.
+              </p>
+
+              <p class="italic">
+                I am the whisper in the wind that becomes a song, the tear that
+                transforms into poetry, the heartbeat that finds rhythm in six
+                strings.
+              </p>
+
+              <p>
+                My guitar knows secrets that my face will never reveal. Each
+                chord progression tells stories of love lost and found, of
+                dreams that flutter like moths around the flame of hope. In
+                Hindi, my mother tongue, I weave tapestries of emotion that
+                transcend the boundaries of the visible world.
+              </p>
+
+              <div
+                class="bg-white/50 p-6 rounded-xl border border-primary/10 ink-splatter"
+              >
+                <p class="text-xl italic text-center handwritten">
+                  "कुछ आवाज़ें चेहरे की मोहताज नहीं होतीं,<br />वे सिर्फ दिल से
+                  दिल तक का सफर करती हैं।"
+                </p>
+                <p class="text-sm text-center mt-3 text-primary/60">
+                  Some voices don't need faces,<br />they just travel from heart
+                  to heart.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative">
+            <div class="w-full h-96 rounded-2xl overflow-hidden shadow-2xl">
+              <img
+                src="https://readdy.ai/api/search-image?query=artistic%20silhouette%20of%20young%20woman%20playing%20acoustic%20guitar%20in%20warm%20golden%20light%20with%20musical%20notes%20floating%20around%20vintage%20aesthetic%20with%20aged%20paper%20texture%20background%20emotional%20and%20poetic%20atmosphere%20hindi%20calligraphy%20elements&width=600&height=800&seq=about001&orientation=portrait"
+                alt="Musical silhouette"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div
+              class="absolute -bottom-4 -right-4 bg-white/80 p-4 rounded-xl shadow-lg backdrop-blur-sm"
+            >
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full"
+                >
+                  <i class="ri-music-2-line text-primary"></i>
+                </div>
+                <div>
+                  <p class="font-semibold text-primary">
+                    Original Compositions
+                  </p>
+                  <p class="text-sm text-primary/60">47+ Songs Written</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="works" class="py-20 px-4 bg-white/30">
+      <div class="max-w-7xl mx-auto">
+        <h2
+          class="text-5xl font-['Playfair_Display'] text-primary text-center mb-16"
+        >
+          Musical Tapestry
+        </h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <div
+            class="card-hover bg-white/70 rounded-2xl p-6 shadow-lg backdrop-blur-sm"
+          >
+            <div
+              class="w-full h-48 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-xl mb-4 flex items-center justify-center relative overflow-hidden"
+            >
+              <img
+                src="https://readdy.ai/api/search-image?query=vintage%20microphone%20with%20warm%20golden%20lighting%20and%20musical%20notes%20floating%20in%20background%20artistic%20composition%20with%20aged%20paper%20texture%20hindi%20poetry%20aesthetic%20emotional%20singing%20atmosphere&width=400&height=300&seq=work001&orientation=landscape"
+                alt="Original Song"
+                class="w-full h-full object-cover object-top rounded-xl"
+              />
+              <div
+                class="absolute inset-0 bg-black/20 flex items-center justify-center"
+              >
+                <button
+                  class="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+                >
+                  <i class="ri-play-fill text-2xl text-primary ml-1"></i>
+                </button>
+              </div>
+            </div>
+            <h3 class="text-xl font-semibold text-primary mb-2">
+              Dil Ki Awaaz
+            </h3>
+            <p class="text-primary/70 text-sm mb-4">
+              Original composition about finding one's voice in silence
+            </p>
+            <div class="audio-player rounded-lg p-3">
+              <div class="flex items-center space-x-3">
+                <button
+                  class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white"
+                >
+                  <i class="ri-play-fill text-sm ml-0.5"></i>
+                </button>
+                <div class="flex-1 h-1 bg-primary/20 rounded-full">
+                  <div class="w-1/3 h-full bg-primary rounded-full"></div>
+                </div>
+                <span class="text-xs text-primary/60">2:34</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="card-hover bg-white/70 rounded-2xl p-6 shadow-lg backdrop-blur-sm"
+          >
+            <div
+              class="w-full h-48 bg-gradient-to-br from-secondary/20 to-primary/20 rounded-xl mb-4 flex items-center justify-center relative overflow-hidden"
+            >
+              <img
+                src="https://readdy.ai/api/search-image?query=acoustic%20guitar%20strings%20close%20up%20with%20warm%20golden%20light%20and%20hindi%20calligraphy%20in%20background%20vintage%20aesthetic%20emotional%20music%20composition%20aged%20paper%20texture%20artistic%20photography&width=400&height=300&seq=work002&orientation=landscape"
+                alt="Guitar Melody"
+                class="w-full h-full object-cover object-top rounded-xl"
+              />
+              <div
+                class="absolute inset-0 bg-black/20 flex items-center justify-center"
+              >
+                <button
+                  class="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+                >
+                  <i class="ri-play-fill text-2xl text-primary ml-1"></i>
+                </button>
+              </div>
+            </div>
+            <h3 class="text-xl font-semibold text-primary mb-2">
+              Raaton Ka Raaja
+            </h3>
+            <p class="text-primary/70 text-sm mb-4">
+              Midnight melodies for the restless soul
+            </p>
+            <div class="audio-player rounded-lg p-3">
+              <div class="flex items-center space-x-3">
+                <button
+                  class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white"
+                >
+                  <i class="ri-play-fill text-sm ml-0.5"></i>
+                </button>
+                <div class="flex-1 h-1 bg-primary/20 rounded-full">
+                  <div class="w-1/2 h-full bg-primary rounded-full"></div>
+                </div>
+                <span class="text-xs text-primary/60">3:12</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="card-hover bg-white/70 rounded-2xl p-6 shadow-lg backdrop-blur-sm"
+          >
+            <div
+              class="w-full h-48 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-xl mb-4 flex items-center justify-center relative overflow-hidden"
+            >
+              <img
+                src="https://readdy.ai/api/search-image?query=vintage%20poetry%20book%20with%20hindi%20calligraphy%20and%20warm%20candlelight%20creating%20soft%20shadows%20aged%20paper%20texture%20emotional%20writing%20atmosphere%20artistic%20composition%20with%20musical%20elements&width=400&height=300&seq=work003&orientation=landscape"
+                alt="Poetry Collection"
+                class="w-full h-full object-cover object-top rounded-xl"
+              />
+              <div
+                class="absolute inset-0 bg-black/20 flex items-center justify-center"
+              >
+                <button
+                  class="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+                >
+                  <i class="ri-play-fill text-2xl text-primary ml-1"></i>
+                </button>
+              </div>
+            </div>
+            <h3 class="text-xl font-semibold text-primary mb-2">
+              Khamoshi Mein
+            </h3>
+            <p class="text-primary/70 text-sm mb-4">
+              Finding poetry in the spaces between words
+            </p>
+            <div class="audio-player rounded-lg p-3">
+              <div class="flex items-center space-x-3">
+                <button
+                  class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white"
+                >
+                  <i class="ri-play-fill text-sm ml-0.5"></i>
+                </button>
+                <div class="flex-1 h-1 bg-primary/20 rounded-full">
+                  <div class="w-2/3 h-full bg-primary rounded-full"></div>
+                </div>
+                <span class="text-xs text-primary/60">4:01</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white/50 p-6 rounded-xl text-center">
+            <div
+              class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="ri-music-2-line text-primary text-xl"></i>
+            </div>
+            <h4 class="font-semibold text-primary mb-2">Original Songs</h4>
+            <p class="text-3xl font-bold text-secondary">47+</p>
+          </div>
+
+          <div class="bg-white/50 p-6 rounded-xl text-center">
+            <div
+              class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="ri-headphone-line text-primary text-xl"></i>
+            </div>
+            <h4 class="font-semibold text-primary mb-2">Monthly Listeners</h4>
+            <p class="text-3xl font-bold text-secondary">12.5K</p>
+          </div>
+
+          <div class="bg-white/50 p-6 rounded-xl text-center">
+            <div
+              class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="ri-heart-line text-primary text-xl"></i>
+            </div>
+            <h4 class="font-semibold text-primary mb-2">Collaborations</h4>
+            <p class="text-3xl font-bold text-secondary">8</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="lyrics" class="py-20 px-4">
+      <div class="max-w-7xl mx-auto">
+        <h2
+          class="text-5xl font-['Playfair_Display'] text-primary text-center mb-16"
+        >
+          Verses from the Heart
+        </h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="lyrics-card p-6 rounded-2xl shadow-lg group cursor-pointer"
+          >
+            <div class="handwritten text-lg text-primary mb-4 leading-relaxed">
+              "चुप रहकर भी कह जाती हूँ,<br />
+              अपने गीतों में छुप जाती हूँ।<br />
+              चेहरा न दिखे तो क्या हुआ,<br />
+              आवाज़ में तो दिल दिखाती हूँ।"
+            </div>
+            <div
+              class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm text-primary/70 italic"
+            >
+              "Even in silence, I speak,<br />
+              I hide within my songs.<br />
+              What if my face doesn't show,<br />
+              In my voice, I reveal my heart."
+            </div>
+            <div class="mt-4 text-xs text-primary/50">
+              From "Khamoshi Ka Geet"
+            </div>
+          </div>
+
+          <div
+            class="lyrics-card p-6 rounded-2xl shadow-lg group cursor-pointer"
+          >
+            <div class="handwritten text-lg text-primary mb-4 leading-relaxed">
+              "रातों में जब तारे सोते हैं,<br />
+              मेरे शब्द जागते हैं।<br />
+              गिटार की तारों पर नाचकर,<br />
+              नए गीत बनाते हैं।"
+            </div>
+            <div
+              class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm text-primary/70 italic"
+            >
+              "When stars sleep at night,<br />
+              My words awaken.<br />
+              Dancing on guitar strings,<br />
+              They create new songs."
+            </div>
+            <div class="mt-4 text-xs text-primary/50">
+              From "Raaton Ka Raaja"
+            </div>
+          </div>
+
+          <div
+            class="lyrics-card p-6 rounded-2xl shadow-lg group cursor-pointer"
+          >
+            <div class="handwritten text-lg text-primary mb-4 leading-relaxed">
+              "दर्द भी एक कलाकार है,<br />
+              जो सुंदर गीत बनाता है।<br />
+              हर आंसू में एक राग छुपा,<br />
+              हर सांस में संगीत बसाता है।"
+            </div>
+            <div
+              class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm text-primary/70 italic"
+            >
+              "Pain is also an artist,<br />
+              Who creates beautiful songs.<br />
+              In every tear hides a melody,<br />
+              In every breath dwells music."
+            </div>
+            <div class="mt-4 text-xs text-primary/50">From "Dard Ka Raag"</div>
+          </div>
+
+          <div
+            class="lyrics-card p-6 rounded-2xl shadow-lg group cursor-pointer"
+          >
+            <div class="handwritten text-lg text-primary mb-4 leading-relaxed">
+              "मैं हूँ एक अधूरी कहानी,<br />
+              जो गीतों में पूरी होती है।<br />
+              चेहरा छुपाकर दिल खोलकर,<br />
+              हर धुन में मेरी आत्मा बोलती है।"
+            </div>
+            <div
+              class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm text-primary/70 italic"
+            >
+              "I am an incomplete story,<br />
+              That completes itself in songs.<br />
+              Hiding my face, opening my heart,<br />
+              My soul speaks in every tune."
+            </div>
+            <div class="mt-4 text-xs text-primary/50">From "Adhuri Kahani"</div>
+          </div>
+
+          <div
+            class="lyrics-card p-6 rounded-2xl shadow-lg group cursor-pointer"
+          >
+            <div class="handwritten text-lg text-primary mb-4 leading-relaxed">
+              "सुनो मेरी आवाज़ को,<br />
+              देखने की जरूरत नहीं।<br />
+              संगीत की भाषा में,<br />
+              चेहरे की जरूरत नहीं।"
+            </div>
+            <div
+              class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm text-primary/70 italic"
+            >
+              "Listen to my voice,<br />
+              No need to see.<br />
+              In the language of music,<br />
+              No need for faces."
+            </div>
+            <div class="mt-4 text-xs text-primary/50">
+              From "Awaaz Ka Jadoo"
+            </div>
+          </div>
+
+          <div
+            class="lyrics-card p-6 rounded-2xl shadow-lg group cursor-pointer"
+          >
+            <div class="handwritten text-lg text-primary mb-4 leading-relaxed">
+              "गुमनामी में भी शोहरत है,<br />
+              छुपकर भी दिखाई देना।<br />
+              मेरे गीत मेरी पहचान हैं,<br />
+              यही मेरा सच्चा होना।"
+            </div>
+            <div
+              class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm text-primary/70 italic"
+            >
+              "There's fame even in anonymity,<br />
+              Being seen while staying hidden.<br />
+              My songs are my identity,<br />
+              This is my true being."
+            </div>
+            <div class="mt-4 text-xs text-primary/50">
+              From "Gumanaam Shayar"
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="press" class="py-20 px-4 bg-white/30">
+      <div class="max-w-6xl mx-auto">
+        <h2
+          class="text-5xl font-['Playfair_Display'] text-primary text-center mb-16"
+        >
+          Recognition & Highlights
+        </h2>
+
+        <div class="space-y-8">
+          <div
+            class="flex items-center space-x-6 bg-white/70 p-6 rounded-2xl shadow-lg"
+          >
+            <div
+              class="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center"
+            >
+              <i class="ri-youtube-fill text-white text-2xl"></i>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-semibold text-primary mb-2">
+                Featured on YouTube Music India
+              </h3>
+              <p class="text-primary/70">
+                "Dil Ki Awaaz" reached 500K+ views in the first month
+              </p>
+              <span class="text-sm text-primary/50">March 2024</span>
+            </div>
+            <div class="text-right">
+              <div class="text-2xl font-bold text-secondary">500K+</div>
+              <div class="text-sm text-primary/60">Views</div>
+            </div>
+          </div>
+
+          <div
+            class="flex items-center space-x-6 bg-white/70 p-6 rounded-2xl shadow-lg"
+          >
+            <div
+              class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center"
+            >
+              <i class="ri-spotify-fill text-white text-2xl"></i>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-semibold text-primary mb-2">
+                Spotify Editorial Playlist
+              </h3>
+              <p class="text-primary/70">
+                Added to "Indie Hindi Gems" with 2.3M followers
+              </p>
+              <span class="text-sm text-primary/50">February 2024</span>
+            </div>
+            <div class="text-right">
+              <div class="text-2xl font-bold text-secondary">2.3M</div>
+              <div class="text-sm text-primary/60">Followers</div>
+            </div>
+          </div>
+
+          <div
+            class="flex items-center space-x-6 bg-white/70 p-6 rounded-2xl shadow-lg"
+          >
+            <div
+              class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center"
+            >
+              <i class="ri-award-line text-white text-2xl"></i>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-semibold text-primary mb-2">
+                Indie Music Awards 2024
+              </h3>
+              <p class="text-primary/70">
+                Nominated for "Best Hindi Indie Song" - Raaton Ka Raaja
+              </p>
+              <span class="text-sm text-primary/50">January 2024</span>
+            </div>
+            <div class="text-right">
+              <div class="text-2xl font-bold text-secondary">Top 5</div>
+              <div class="text-sm text-primary/60">Nominee</div>
+            </div>
+          </div>
+
+          <div
+            class="flex items-center space-x-6 bg-white/70 p-6 rounded-2xl shadow-lg"
+          >
+            <div
+              class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center"
+            >
+              <i class="ri-radio-line text-white text-2xl"></i>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-semibold text-primary mb-2">
+                Radio City Hindi Interview
+              </h3>
+              <p class="text-primary/70">
+                Voice-only interview about anonymous artistry in modern music
+              </p>
+              <span class="text-sm text-primary/50">December 2023</span>
+            </div>
+            <div class="text-right">
+              <div class="text-2xl font-bold text-secondary">1M+</div>
+              <div class="text-sm text-primary/60">Listeners</div>
+            </div>
+          </div>
+
+          <div
+            class="flex items-center space-x-6 bg-white/70 p-6 rounded-2xl shadow-lg"
+          >
+            <div
+              class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center"
+            >
+              <i class="ri-soundcloud-line text-white text-2xl"></i>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-semibold text-primary mb-2">
+                SoundCloud Rising Artist
+              </h3>
+              <p class="text-primary/70">
+                Featured in "Artists to Watch" with 50K+ monthly listeners
+              </p>
+              <span class="text-sm text-primary/50">November 2023</span>
+            </div>
+            <div class="text-right">
+              <div class="text-2xl font-bold text-secondary">50K+</div>
+              <div class="text-sm text-primary/60">Monthly</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-20 px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2
+          class="text-5xl font-['Playfair_Display'] text-primary text-center mb-8"
+        >
+          Connect Through Music
+        </h2>
+        <p class="text-center text-primary/70 text-lg mb-16 max-w-2xl mx-auto">
+          While I remain unseen, my music bridges all distances. Reach out for
+          collaborations, commissions, or simply to share how a song touched
+          your heart.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-12">
+          <div class="space-y-8">
+            <div class="bg-white/70 p-8 rounded-2xl shadow-lg">
+              <h3 class="text-2xl font-semibold text-primary mb-6">
+                Let's Create Together
+              </h3>
+              <form class="space-y-6">
+                <div>
+                  <label class="block text-primary/70 text-sm font-medium mb-2"
+                    >Your Name</label
+                  >
+                  <input
+                    type="text"
+                    class="w-full px-4 py-3 border-none bg-white/80 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/30 text-primary"
+                    placeholder="How should I address you?"
+                  />
+                </div>
+                <div>
+                  <label class="block text-primary/70 text-sm font-medium mb-2"
+                    >Email</label
+                  >
+                  <input
+                    type="email"
+                    class="w-full px-4 py-3 border-none bg-white/80 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/30 text-primary"
+                    placeholder="your@email.com"
+                  />
+                </div>
+                <div>
+                  <label class="block text-primary/70 text-sm font-medium mb-2"
+                    >Project Type</label
+                  >
+                  <div class="relative">
+                    <button
+                      type="button"
+                      class="w-full px-4 py-3 bg-white/80 rounded-lg text-left text-primary focus:outline-none focus:ring-2 focus:ring-primary/30 pr-8"
+                    >
+                      Select collaboration type...
+                    </button>
+                    <div
+                      class="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 flex items-center justify-center"
+                    >
+                      <i class="ri-arrow-down-s-line text-primary/60"></i>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <label class="block text-primary/70 text-sm font-medium mb-2"
+                    >Your Message</label
+                  >
+                  <textarea
+                    rows="4"
+                    class="w-full px-4 py-3 border-none bg-white/80 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/30 text-primary resize-none"
+                    placeholder="Share your vision, and let's create something beautiful together..."
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  class="w-full bg-primary text-white py-3 px-6 rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap"
+                >
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <div class="space-y-8">
+            <div class="bg-white/70 p-8 rounded-2xl shadow-lg">
+              <h3 class="text-2xl font-semibold text-primary mb-6">
+                Other Ways to Connect
+              </h3>
+              <div class="space-y-6">
+                <div class="flex items-center space-x-4">
+                  <div
+                    class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center"
+                  >
+                    <i class="ri-mail-line text-primary"></i>
+                  </div>
+                  <div>
+                    <p class="font-medium text-primary">Email</p>
+                    <p class="text-primary/70">kripa.s.music@gmail.com</p>
+                  </div>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                  <div
+                    class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center"
+                  >
+                    <i class="ri-instagram-line text-primary"></i>
+                  </div>
+                  <div>
+                    <p class="font-medium text-primary">Instagram</p>
+                    <p class="text-primary/70">@kripa.s.music</p>
+                  </div>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                  <div
+                    class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center"
+                  >
+                    <i class="ri-youtube-line text-primary"></i>
+                  </div>
+                  <div>
+                    <p class="font-medium text-primary">YouTube</p>
+                    <p class="text-primary/70">Kripa S Music</p>
+                  </div>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                  <div
+                    class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center"
+                  >
+                    <i class="ri-spotify-line text-primary"></i>
+                  </div>
+                  <div>
+                    <p class="font-medium text-primary">Spotify</p>
+                    <p class="text-primary/70">Kripa S</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-gradient-to-br from-primary/10 to-secondary/10 p-8 rounded-2xl"
+            >
+              <div class="text-center">
+                <div
+                  class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4"
+                >
+                  <i class="ri-heart-line text-primary text-2xl"></i>
+                </div>
+                <h4 class="text-xl font-semibold text-primary mb-3">
+                  Support My Music
+                </h4>
+                <p class="text-primary/70 text-sm mb-4">
+                  Every stream, share, and kind word helps keep the music alive
+                </p>
+                <div class="flex justify-center space-x-4">
+                  <a
+                    href="#"
+                    class="w-10 h-10 bg-white/80 rounded-full flex items-center justify-center hover:scale-110 transition-transform"
+                  >
+                    <i class="ri-spotify-fill text-green-500"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="w-10 h-10 bg-white/80 rounded-full flex items-center justify-center hover:scale-110 transition-transform"
+                  >
+                    <i class="ri-youtube-fill text-red-500"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="w-10 h-10 bg-white/80 rounded-full flex items-center justify-center hover:scale-110 transition-transform"
+                  >
+                    <i class="ri-soundcloud-fill text-orange-500"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="bg-primary/5 py-12 px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-8">
+          <div class="font-['Pacifico'] text-4xl text-primary mb-4">
+            Kripa S
+          </div>
+          <p class="text-primary/70 italic">
+            "Music speaks where words fail, and I speak through music."
+          </p>
+        </div>
+
+        <div class="flex justify-center space-x-8 mb-8">
+          <a
+            href="#"
+            class="w-12 h-12 bg-white/80 rounded-full flex items-center justify-center hover:scale-110 transition-transform shadow-lg"
+          >
+            <i class="ri-instagram-line text-primary text-xl"></i>
+          </a>
+          <a
+            href="#"
+            class="w-12 h-12 bg-white/80 rounded-full flex items-center justify-center hover:scale-110 transition-transform shadow-lg"
+          >
+            <i class="ri-youtube-line text-primary text-xl"></i>
+          </a>
+          <a
+            href="#"
+            class="w-12 h-12 bg-white/80 rounded-full flex items-center justify-center hover:scale-110 transition-transform shadow-lg"
+          >
+            <i class="ri-spotify-line text-primary text-xl"></i>
+          </a>
+          <a
+            href="#"
+            class="w-12 h-12 bg-white/80 rounded-full flex items-center justify-center hover:scale-110 transition-transform shadow-lg"
+          >
+            <i class="ri-soundcloud-line text-primary text-xl"></i>
+          </a>
+        </div>
+
+        <div class="text-center text-primary/60 text-sm">
+          <p>
+            &copy; 2024 Kripa S. All rights reserved. | Music that transcends
+            the visible.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script id="mobile-menu-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        mobileMenuBtn.addEventListener("click", function () {
+          mobileMenu.classList.toggle("hidden");
+        });
+      });
+    </script>
+
+    <script id="smooth-scroll-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const links = document.querySelectorAll('a[href^="#"]');
+
+        links.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href");
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+              const offsetTop = targetElement.offsetTop - 80;
+              window.scrollTo({
+                top: offsetTop,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+      });
+    </script>
+
+    <script id="audio-player-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const playButtons = document.querySelectorAll(".audio-player button");
+
+        playButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            const icon = this.querySelector("i");
+
+            if (icon.classList.contains("ri-play-fill")) {
+              icon.classList.remove("ri-play-fill");
+              icon.classList.add("ri-pause-fill");
+            } else {
+              icon.classList.remove("ri-pause-fill");
+              icon.classList.add("ri-play-fill");
+            }
+          });
+        });
+      });
+    </script>
+
+    <script id="form-submission-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.querySelector("form");
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const submitBtn = this.querySelector('button[type="submit"]');
+          const originalText = submitBtn.textContent;
+
+          submitBtn.textContent = "Sending...";
+          submitBtn.disabled = true;
+
+          setTimeout(() => {
+            submitBtn.textContent = "Message Sent!";
+            submitBtn.classList.add("bg-green-500");
+
+            setTimeout(() => {
+              submitBtn.textContent = originalText;
+              submitBtn.disabled = false;
+              submitBtn.classList.remove("bg-green-500");
+              form.reset();
+            }, 2000);
+          }, 1500);
+        });
+      });
+    </script>
+  </body>
+</html>
